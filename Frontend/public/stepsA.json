@@ -1,0 +1,34 @@
+[
+  {
+    "title": "A-1 - prvi sat",
+    "description": "Upoznavanje vozila, priprema vozila za vožnju, dnevni preventivni pregled (provjera razine ulja u motoru, tekućine za hlađenje, tekućine za pranje stakala, korištenje opreme vozila – priprema vozila za vuču), prilagodba sjedala, pravilan položaj za vožnju, prilagodba vozačkih ogledala, vezanje sigurnosnog pojasa i prilagodba naslona za glavu."
+  },
+  {
+    "title": "A-1 - drugi sat",
+    "description": "Upoznavanje vozila, priprema vozila za vožnju, dnevni preventivni pregled (provjera razine ulja u motoru, tekućine za hlađenje, tekućine za pranje stakala, korištenje opreme vozila – priprema vozila za vuču), prilagodba sjedala, pravilan položaj za vožnju, prilagodba vozačkih ogledala, vezanje sigurnosnog pojasa i prilagodba naslona za glavu."
+  },
+  {
+    "title": "A-2",
+    "description": "Mijenjanje stupnjeva prijenosa i zaustavljanje"
+  },
+  {
+    "title": "A-3 - prvi sat",
+    "description": "Vožnja unaprijed – unatrag po pravcu i s promjenom smjera"
+  },
+  {
+    "title": "A-3 - drugi sat",
+    "description": "Vožnja unaprijed – unatrag po pravcu i s promjenom smjera"
+  },
+  {
+    "title": "A-4",
+    "description": "Okretanje vozila s više postupaka"
+  },
+  {
+    "title": "A-5",
+    "description": "Parkiranje vozila"
+  },
+  {
+    "title": "A-6",
+    "description": "Iznenadno kočenje i zaustavljanje"
+  }
+]

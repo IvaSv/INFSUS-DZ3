@@ -1,0 +1,110 @@
+[
+  {
+    "title": "B-1 - prvi sat",
+    "description": "Uključivanje u promet i isključivanje iz prometa: utvrđivanje prometnih uvjeta, uporaba pokazivača smjera, izbor trenutka za uključivanje, propuštanje pješaka i vozila, zaustavljanje, mjere opreza, ostavljanje vozila"
+  },
+  {
+    "title": "B-1 - drugi sat",
+    "description": "Uključivanje u promet i isključivanje iz prometa: utvrđivanje prometnih uvjeta, uporaba pokazivača smjera, izbor trenutka za uključivanje, propuštanje pješaka i vozila, zaustavljanje, mjere opreza, ostavljanje vozila"
+  },
+  {
+    "title": "B-2 - prvi sat",
+    "description": "Vožnja ponašanje u prometu: položaj vozila u prometnoj traci, održavanje razmaka u nizu (koloni), ubrzavanje i usporavanje, kočenje i zaustavljanje, prilagođavanje brzine prometnim uvjetima, pravilno mimoilaženje i propuštanje vozila, vožnja zavojima, vožnja po uzbrdici i nizbrdici."
+  },
+  {
+    "title": "B-2 - drugi sat",
+    "description": "Vožnja ponašanje u prometu: položaj vozila u prometnoj traci, održavanje razmaka u nizu (koloni), ubrzavanje i usporavanje, kočenje i zaustavljanje, prilagođavanje brzine prometnim uvjetima, pravilno mimoilaženje i propuštanje vozila, vožnja zavojima, vožnja po uzbrdici i nizbrdici."
+  },
+  {
+    "title": "B-3",
+    "description": "Polazak vozilom na uzbrdici (nizbrdici), uz korištenje pomoćne i radne kočnice."
+  },
+  {
+    "title": "B-4 - prvi sat",
+    "description": "Polukružno okretanje vozila vožnjom unatrag sa skretanjem ulijevo ili udesno s tim da se održava ispravan položaj unutar prometne trake."
+  },
+  {
+    "title": "B-4 - drugi sat",
+    "description": "Polukružno okretanje vozila vožnjom unatrag sa skretanjem ulijevo ili udesno s tim da se održava ispravan položaj unutar prometne trake."
+  },
+  {
+    "title": "B-5 - prvi sat",
+    "description": "Parkiranje vozila i napuštanje parkirališta (okomito ili koso, unaprijed ili unatrag na ravnoj podlozi, uzbrdo ili nizbrdo)"
+  },
+  {
+    "title": "B-5 - drugi sat",
+    "description": "Parkiranje vozila i napuštanje parkirališta (okomito ili koso, unaprijed ili unatrag na ravnoj podlozi, uzbrdo ili nizbrdo)"
+  },
+  {
+    "title": "B-6 - prvi sat",
+    "description": "Vožnja raskrižjem: približavanje, prestrojavanje, vožnja različitim tipovima raskrižja, prilagođavanje brzine, uočavanje prometne situacije, odnos prema drugim sudionicima, propuštanje vozila, izbor prometne trake, skretanje."
+  },
+  {
+    "title": "B-6 - drugi sat",
+    "description": "Vožnja raskrižjem: približavanje, prestrojavanje, vožnja različitim tipovima raskrižja, prilagođavanje brzine, uočavanje prometne situacije, odnos prema drugim sudionicima, propuštanje vozila, izbor prometne trake, skretanje."
+  },
+  {
+    "title": "B-7",
+    "description": "Postupanje prema znakovima u prometu: koje daje ovlaštena osoba, prometnim svjetlima- semaforima, prometnim znakovima, oznakama na kolniku."
+  },
+  {
+    "title": "B-8 - prvi sat",
+    "description": "Uključivanje na autocestu ili brzu cestu ili cestu namijenjenu za promet motornih vozila i vožnju, isključivanje s tih cesta, korištenje trake za ubrzavanje i usporavanje."
+  },
+  {
+    "title": "B-8 - drugi sat",
+    "description": "Uključivanje na autocestu ili brzu cestu ili cestu namijenjenu za promet motornih vozila i vožnju, isključivanje s tih cesta, korištenje trake za ubrzavanje i usporavanje."
+  },
+  {
+    "title": "B-9 - prvi sat",
+    "description": "Prilagođavanje brzine vožnje: prema kolničkim i prometnim uvjetima, prema radnji koju izvodi, prema maksimalnoj dopuštenoj brzini u odnosu na vrstu cesta (obvezno do 80, 100,odnosno 120 km/h), prema drugim sudionicima."
+  },
+  {
+    "title": "B-9 - drugi sat",
+    "description": "Prilagođavanje brzine vožnje: prema kolničkim i prometnim uvjetima, prema radnji koju izvodi, prema maksimalnoj dopuštenoj brzini u odnosu na vrstu cesta (obvezno do 80, 100,odnosno 120 km/h), prema drugim sudionicima."
+  },
+  {
+    "title": "B-10 - prvi sat",
+    "description": "Pretjecanje i obilaženje: pravilnost postupka pretjecanja i obilaženja, provjeru prometnih uvjeta, uporaba pokazivača smjera, prilagodba brzine vožnje, postupak kada pretječe drugo vozilo."
+  },
+  {
+    "title": "B-10 - drugi sat",
+    "description": "Pretjecanje i obilaženje: pravilnost postupka pretjecanja i obilaženja, provjeru prometnih uvjeta, uporaba pokazivača smjera, prilagodba brzine vožnje, postupak kada pretječe drugo vozilo."
+  },
+  {
+    "title": "B-11 - prvi sat",
+    "description": "Vožnja u naselju (gradu) i izvan naselja (grada)."
+  },
+  {
+    "title": "B-11 - drugi sat",
+    "description": "Vožnja u naselju (gradu) i izvan naselja (grada)."
+  },
+  {
+    "title": "B-12 - prvi sat",
+    "description": "Vožnja u posebnim uvjetima: noć, dan, kiša, magla, ako to vremenski i uvjeti vidljivosti omogućuju."
+  },
+  {
+    "title": "B-12 - drugi sat",
+    "description": "Vožnja u posebnim uvjetima: noć, dan, kiša, magla, ako to vremenski i uvjeti vidljivosti omogućuju."
+  },
+  {
+    "title": "B-13 - prvi sat",
+    "description": "Vožnja prometnicama sa posebnim karakteristikama (ukoliko postoje u mjestu provedbe ispita ); kružni tok prometa, prijelaz preko željezničke ili tramvajske pruge u razini, vožnja uz stajališta vozila javnog prijevoza putnika, vožnja uzbrdicama i nizbrdicama."
+  },
+  {
+    "title": "B-13 - drugi sat",
+    "description": "Vožnja prometnicama sa posebnim karakteristikama (ukoliko postoje u mjestu provedbe ispita ); kružni tok prometa, prijelaz preko željezničke ili tramvajske pruge u razini, vožnja uz stajališta vozila javnog prijevoza putnika, vožnja uzbrdicama i nizbrdicama."
+  },
+  {
+    "title": "B-14 - prvi sat",
+    "description": "Odnos prema drugim sudionicima u prometu: prema djeci, nemoćnim osobama, invalidima, pješacima, biciklistima i drugim sudionicima, prema vozilima javnog prijevoza putnika, nepravilno, nekorektno i nepredvidivo reagiranje, reagiranje na pogreške drugih sudionika, praćenje postupaka drugih sudionika u prometu, ugrožavanje ili ometanje drugih sudionika."
+  },
+  {
+    "title": "B-14 - drugi sat",
+    "description": "Odnos prema drugim sudionicima u prometu: prema djeci, nemoćnim osobama, invalidima, pješacima, biciklistima i drugim sudionicima, prema vozilima javnog prijevoza putnika, nepravilno, nekorektno i nepredvidivo reagiranje, reagiranje na pogreške drugih sudionika, praćenje postupaka drugih sudionika u prometu, ugrožavanje ili ometanje drugih sudionika."
+  },
+  {
+    "title": "B-15",
+    "description": "Predispitni sat vožnje i ocjena instruktora vožnje odnosno ocjena voditelja auto škole."
+  }
+]
