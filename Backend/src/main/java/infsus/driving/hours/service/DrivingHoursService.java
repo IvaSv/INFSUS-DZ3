@@ -48,6 +48,16 @@ public class DrivingHoursService {
             return  false;
         }
 
+        // provjera maksimalnog broja sati po field_id
+        Long userId = user.getId();
+        Long fieldId = field.getId();
+
+        int existingCount = drivingHoursRepository.countByUserIdAndFieldId(userId, fieldId);
+
+        if ((fieldId == 1 && existingCount >= 8) || (fieldId == 2 && existingCount >= 27)) {
+            return false;
+        }
+
 
         DrivingHours drivingHours = new DrivingHours();
         drivingHours.setField(field);
