@@ -5,6 +5,9 @@ import infsus.driving.hours.entity.LessonStatus;
 import java.time.LocalDate;
 
 public class DrivingHoursDTO {
+
+    private Long id;
+
     private String field;
     private LocalDate date;
     private LessonStatus status;
@@ -14,11 +17,20 @@ public class DrivingHoursDTO {
     public DrivingHoursDTO() {
     }
 
-    public DrivingHoursDTO(String field, LocalDate date, LessonStatus status, String note) {
+    public DrivingHoursDTO(Long id, String field, LocalDate date, LessonStatus status, String note) {
+        this.id = id;
         this.field = field;
         this.date = date;
         this.status = status;
         this.note = note;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getField() {

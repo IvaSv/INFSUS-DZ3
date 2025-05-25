@@ -2,6 +2,7 @@ package infsus.driving.hours.controller;
 
 import infsus.driving.hours.controller.dto.DrivingHoursDTO;
 import infsus.driving.hours.controller.dto.DrivingHoursForm;
+import infsus.driving.hours.controller.dto.NoteDTO;
 import infsus.driving.hours.service.DrivingHoursService;
 import infsus.security.configuration.JWTGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +44,22 @@ public class DrivingHoursController {
 
         return ResponseEntity.ok(drivingHoursDTOList);
     }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Void> updateNote(@RequestHeader("Authorization") String token,
+                                           @PathVariable Long id,
+                                           @RequestBody NoteDTO noteDTO) {
+
+        boolean updated = drivingHoursService.updateNote(id, noteDTO.getNote());
+
+        if (updated) {
+            return ResponseEntity.ok().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+
 
 
     @GetMapping("/getMy")

@@ -75,6 +75,9 @@ export default function StudentProgress() {
   const [backendData, setBackendData] = useState(null);
   const navigate = useNavigate();
 
+  const [noteInput, setNoteInput] = useState('');
+  const [isEditing, setIsEditing] = useState(false);
+
   const [formData, setFormData] = useState({
     field: '',
     date: '',
@@ -165,6 +168,8 @@ export default function StudentProgress() {
     const clickedStepData = stepsA[index];
     setModalData(clickedStepData);
     setBackendData(drivingHoursA[index]);
+    setNoteInput(drivingHoursA[index]?.note || '');
+    setIsEditing(false);
     onOpen();
   };
 
@@ -220,9 +225,100 @@ export default function StudentProgress() {
     }
   };
 
+  const handleNoteUpdate = async () => {
+    try {
+      const token = localStorage.getItem('token'); // ili gdje god ga držiš
+
+      console.log('Note update: ', noteInput);
+      const res = await fetch(`/api/driving_hours/update/${backendData.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: token
+        },
+        body: JSON.stringify({ note: noteInput })
+      });
+
+      if (res.ok) {
+        setIsEditing(false);
+        onClose();
+        // (opcionalno) ponovno dohvaćanje podataka ako treba
+      } else {
+        console.error('Greška kod spremanja bilješke');
+      }
+    } catch (err) {
+      console.error('Greška u fetch zahtjevu:', err);
+    }
+  };
+
   return (
     <>
       <Navbar></Navbar>
+
+      <Modal
+        blockScrollOnMount={false}
+        isOpen={isOpen}
+        onClose={onClose}
+        size="2xl"
+      >
+        <ModalContent>
+          <ModalHeader>{modalData ? modalData.title : ''}</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Grid gap={4} marginBottom="2em">
+              <GridItem>
+                <Flex
+                  direction="column"
+                  align="left"
+                  marginTop="2em"
+                  marginLeft="2em"
+                >
+                  <Text display="flex" alignItems="center">
+                    <Box marginRight="4">
+                      <MdDateRange />
+                    </Box>
+                    {backendData?.date || ''}
+                  </Text>
+                  <Text display="flex" alignItems="center">
+                    <Box marginRight="4">
+                      <FaCheck />
+                    </Box>
+                    {backendData?.status || ''}
+                  </Text>
+                  <Text display="flex" alignItems="center" mb={2}>
+                    <Box marginRight="4">
+                      <MdEditNote />
+                    </Box>
+                    {isEditing ? (
+                      <Textarea
+                        value={noteInput}
+                        onChange={(e) => setNoteInput(e.target.value)}
+                      />
+                    ) : (
+                      backendData?.note || ''
+                    )}
+                  </Text>
+                  {backendData &&
+                    (!isEditing ? (
+                      <Button
+                        onClick={() => {
+                          setIsEditing(true);
+                          setNoteInput(backendData.note || '');
+                        }}
+                      >
+                        Uredi bilješku
+                      </Button>
+                    ) : (
+                      <Button colorScheme="green" onClick={handleNoteUpdate}>
+                        Spremi
+                      </Button>
+                    ))}
+                </Flex>
+              </GridItem>
+            </Grid>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
       <Grid
         templateColumns="repeat(2,1fr)"
         justifyContent="center"
@@ -525,6 +621,7 @@ export default function StudentProgress() {
             <Text fontSize="3xl" fontWeight="bold">
               Sadržaj osposobljavanja na prometnom vježbalištu
             </Text>
+
             <Stepper
               index={drivingHoursALength} //kasnije ce ovo biti svi sati koji su odradjeni!
               orientation="vertical"
@@ -551,51 +648,6 @@ export default function StudentProgress() {
                     <StepTitle>{step.title}</StepTitle>
                     <StepDescription>{step.description}</StepDescription>
                   </Box>
-
-                  <Modal
-                    blockScrollOnMount={false}
-                    isOpen={isOpen}
-                    onClose={onClose}
-                    size="2xl"
-                  >
-                    <ModalContent>
-                      <ModalHeader>
-                        {modalData ? modalData.title : ''}
-                      </ModalHeader>
-                      <ModalCloseButton />
-                      <ModalBody>
-                        <Grid gap={4} marginBottom="2em">
-                          <GridItem>
-                            <Flex
-                              direction="column"
-                              align="left"
-                              marginTop="2em"
-                              marginLeft="2em"
-                            >
-                              <Text display="flex" alignItems="center">
-                                <Box marginRight="4">
-                                  <MdDateRange />
-                                </Box>
-                                {backendData ? backendData.date : ''}
-                              </Text>
-                              <Text display="flex" alignItems="center">
-                                <Box marginRight="4">
-                                  <FaCheck />
-                                </Box>
-                                {backendData ? backendData.status : ''}
-                              </Text>
-                              <Text display="flex" alignItems="center">
-                                <Box marginRight="4">
-                                  <MdEditNote />
-                                </Box>
-                                {backendData ? backendData.note : ''}
-                              </Text>
-                            </Flex>
-                          </GridItem>
-                        </Grid>
-                      </ModalBody>
-                    </ModalContent>
-                  </Modal>
 
                   <StepSeparator />
                 </Step>
@@ -630,55 +682,6 @@ export default function StudentProgress() {
                     <StepTitle>{step.title}</StepTitle>
                     <StepDescription>{step.description}</StepDescription>
                   </Box>
-
-                  <Modal
-                    blockScrollOnMount={false}
-                    isOpen={isOpen}
-                    onClose={onClose}
-                    size="2xl"
-                  >
-                    <ModalContent>
-                      <ModalHeader>
-                        {modalData ? modalData.title : ''}
-                      </ModalHeader>
-                      <ModalCloseButton />
-                      <ModalBody>
-                        <Grid
-                          templateColumns="repeat(1, 1fr)"
-                          gap={4}
-                          marginBottom="2em"
-                        >
-                          <GridItem>
-                            <Flex
-                              direction="column"
-                              align="left"
-                              marginTop="2em"
-                              marginLeft="2em"
-                            >
-                              <Text display="flex" alignItems="center">
-                                <Box marginRight="4">
-                                  <MdDateRange />
-                                </Box>
-                                {backendData ? backendData.date : ''}
-                              </Text>
-                              <Text display="flex" alignItems="center">
-                                <Box marginRight="4">
-                                  <FaCheck />
-                                </Box>
-                                {backendData ? backendData.status : ''}
-                              </Text>
-                              <Text display="flex" alignItems="center">
-                                <Box marginRight="4">
-                                  <MdEditNote />
-                                </Box>
-                                {backendData ? backendData.note : ''}
-                              </Text>
-                            </Flex>
-                          </GridItem>
-                        </Grid>
-                      </ModalBody>
-                    </ModalContent>
-                  </Modal>
 
                   <StepSeparator />
                 </Step>

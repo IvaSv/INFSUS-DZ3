@@ -60,6 +60,20 @@ public class DrivingHoursService {
         return true;
     }
 
+    public boolean updateNote(Long id, String note) {
+        Optional<DrivingHours> optional = drivingHoursRepository.findById(id);
+
+        if (optional.isEmpty()) {
+            return false;
+        }
+
+        DrivingHours hour = optional.get();
+        hour.setNote(note);
+        drivingHoursRepository.save(hour);
+        return true;
+    }
+
+
 
     //student sees his notes
     public List<DrivingHoursDTO> getMyHourNotes(String studentEmail){
@@ -70,7 +84,7 @@ public class DrivingHoursService {
         List<DrivingHours> drivingHoursNotes = drivingHoursRepository.findAllByUserId(userId);
         List<DrivingHoursDTO> drivingHoursDTOList = new ArrayList<>();
         for(DrivingHours d : drivingHoursNotes){
-            drivingHoursDTOList.add(new DrivingHoursDTO(d.getField().getName(), d.getDate(), d.getStatus(), d.getNote()));
+            drivingHoursDTOList.add(new DrivingHoursDTO(d.getId(),d.getField().getName(), d.getDate(), d.getStatus(), d.getNote()));
         }
 
         return drivingHoursDTOList;
@@ -86,7 +100,7 @@ public class DrivingHoursService {
         List<DrivingHours> drivingHoursNotes = drivingHoursRepository.findAllByUserId(userId);
         List<DrivingHoursDTO> drivingHoursDTOList = new ArrayList<>();
         for(DrivingHours d : drivingHoursNotes){
-            drivingHoursDTOList.add(new DrivingHoursDTO(d.getField().getName(), d.getDate(), d.getStatus(), d.getNote()));
+            drivingHoursDTOList.add(new DrivingHoursDTO(d.getId(), d.getField().getName(), d.getDate(), d.getStatus(), d.getNote()));
         }
 
         return drivingHoursDTOList;
