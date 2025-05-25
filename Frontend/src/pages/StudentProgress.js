@@ -46,6 +46,7 @@ export default function StudentProgress() {
   const [drivingHours, setDrivingHours] = useState([]);
   const [drivingHoursA, setDrivingHoursA] = useState([]);
   const [drivingHoursB, setDrivingHoursB] = useState([]);
+  const [drivingHoursC, setDrivingHoursC] = useState([]);
 
   const [drivingHoursALength, setDrivingHoursALength] = useState(0);
   const [drivingHoursBLength, setDrivingHoursBLength] = useState(0);
@@ -115,8 +116,16 @@ export default function StudentProgress() {
       })
       .then((response) => {
         setDrivingHours(response);
-        setDrivingHoursA(drivingHours.filter((d) => d.field === 'V'));
-        setDrivingHoursB(drivingHours.filter((d) => d.field === 'C'));
+
+        const A = drivingHours.filter((d) => d.field === 'V');
+        const B = drivingHours.filter((d) => d.field === 'C');
+        const C = drivingHours.filter(
+          (d) => d.field !== 'V' && d.field !== 'C'
+        );
+
+        setDrivingHoursA(A);
+        setDrivingHoursB(B);
+        setDrivingHoursC(C);
 
         setDrivingHoursALength(drivingHoursA.length);
         setDrivingHoursBLength(drivingHoursB.length);
@@ -178,6 +187,7 @@ export default function StudentProgress() {
   const handleSubmit = async () => {
     // Logika za slanje forme na backend
     try {
+      console.log('form:', formData);
       const response = await fetch('/api/driving_hours/add', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: token },
@@ -674,6 +684,39 @@ export default function StudentProgress() {
                 </Step>
               ))}
             </Stepper>
+            {drivingHoursC.length > 0 && (
+              <>
+                <Text fontSize="3xl" fontWeight="bold" marginTop="2em">
+                  Dodatno
+                </Text>
+                <Box mt={4} width="100%" paddingLeft="40%">
+                  {drivingHoursC.map((hour, index) => (
+                    <Box
+                      key={index}
+                      p={4}
+                      mb={4}
+                      bg="gray.100"
+                      borderRadius="md"
+                      boxShadow="sm"
+                      width="60%"
+                    >
+                      <Text>
+                        <strong>Datum:</strong> {hour.date}
+                      </Text>
+                      <Text>
+                        <strong>Status:</strong> {hour.status}
+                      </Text>
+                      <Text>
+                        <strong>Bilješka:</strong> {hour.note}
+                      </Text>
+                      <Text>
+                        <strong>Vrsta terena:</strong> {hour.field}
+                      </Text>
+                    </Box>
+                  ))}
+                </Box>
+              </>
+            )}
           </Flex>
         </GridItem>
       </Grid>

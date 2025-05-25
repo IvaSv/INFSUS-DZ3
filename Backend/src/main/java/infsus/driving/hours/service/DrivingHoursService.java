@@ -32,11 +32,11 @@ public class DrivingHoursService {
     public boolean add(DrivingHoursForm drivingHoursForm) {
 
         User user = userRepository.findUserByEmail(drivingHoursForm.getEmail());
-        Field field = fieldRepository.findByName(drivingHoursForm.getField()); // npr. "Vježbalište"
-
+        Field field = fieldRepository.findById(Long.parseLong(drivingHoursForm.getField()))
+                .orElse(null);
 
         //validacija podataka koja se ne svodi na provjeru je li podatak popunjen, u valjanom rasponu
-        // provjerava se neko složenije pravilo
+        // provjerava se neko složenije pravilo -> provjeriti max broj sati iz nekog podrucja
 
         //nije dozvoljen unos sati za buduće datume.
         if (drivingHoursForm.getDate().isAfter(LocalDate.now())) {
